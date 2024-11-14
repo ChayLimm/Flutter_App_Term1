@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import  'package:lesson/W4_S3/EX2/favCard.dart';
+import  'package:fluttermain/W4_S3/EX2/favCard.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});

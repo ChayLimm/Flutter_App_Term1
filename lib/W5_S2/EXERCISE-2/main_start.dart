@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lesson/W5_S2/EXERCISE-2/data/profile_data.dart';
-import 'package:lesson/W5_S2/EXERCISE-2/model/profile_tile_model.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-2/data/profile_data.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-2/model/profile_tile_model.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});

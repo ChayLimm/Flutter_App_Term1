@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lesson/W5_S2/EXERCISE-4/data.dart';
-import 'package:lesson/W5_S2/EXERCISE-4/model.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-4/data.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-4/model.dart';
 
 Color appColor = Colors.green[300] as Color;
 

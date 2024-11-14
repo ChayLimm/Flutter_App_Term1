@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lesson/W4_S3/challenge/slider.dart';
+import 'package:fluttermain/W4_S3/challenge/slider.dart';
 
 class MyHomePage extends StatelessWidget {
   

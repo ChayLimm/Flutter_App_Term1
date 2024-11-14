@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lesson/W5_S2/EXERCISE-4/model.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-4/model.dart';
 
 List<Joke> jokeList = [
    Joke(title: "joke1", discription: "Not funny"),

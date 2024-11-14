@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lesson/W5_S2/EXERCISE-3/screen/temperature.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-3/screen/temperature.dart';
 // import 'package:test1/W5-S2-List-Inputs/1%20-%20START%20CODE/EXERCISE-3/screen/welcome.dart';
-import 'package:lesson/W5_S2/EXERCISE-3/screen/welcome.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-3/screen/welcome.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:test1/W5-S2-List-Inputs/1%20-%20START%20CODE/EXERCISE-2/model/profile_tile_model.dart';
-import 'package:lesson/W5_S2/EXERCISE-2/model/profile_tile_model.dart';
+import 'package:fluttermain/W5_S2/EXERCISE-2/model/profile_tile_model.dart';
  
 ProfileData chaylimProfile = ProfileData(
     name: "ChayLim",
