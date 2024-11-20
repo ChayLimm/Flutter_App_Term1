@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FavoriteCard extends StatefulWidget {
+class FavoriteCard extends StatelessWidget {
   final VoidCallback trigger;
   final bool isFavorite;
   final String title;
@@ -13,21 +13,16 @@ class FavoriteCard extends StatefulWidget {
       required this.isFavorite});
 
   @override
-  State<FavoriteCard> createState() => _FavoriteCardState();
-}
-
-class _FavoriteCardState extends State<FavoriteCard> {
-  @override
   Widget build(BuildContext context) {
     return Card(
         child: ListTile(
-      title: Text(widget.title),
-      subtitle: Text(widget.discription),
+      title: Text(title),
+      subtitle: Text(discription),
       trailing: IconButton(
-          onPressed: widget.trigger,
+          onPressed: trigger,
           icon: Icon(
-            widget.isFavorite ? Icons.favorite : Icons.favorite_border,
-            color: widget.isFavorite ? Colors.red : Colors.grey,
+            isFavorite ? Icons.favorite : Icons.favorite_border,
+            color: isFavorite ? Colors.red : Colors.grey,
           )),
     ));
   }

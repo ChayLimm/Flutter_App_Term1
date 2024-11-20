@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermain/W6_S2/EXERCISE-4/data/data.dart';
-import 'package:fluttermain/W6_S2/EXERCISE-4/favoriteCard.dart';
+import 'package:fluttermain/W6_S2/EXERCISE-4/screen/favoriteCard.dart';
 
 Color appColor = Colors.green[300] as Color;
 

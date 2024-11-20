@@ -12,15 +12,18 @@ class MyHomePage extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: ListView(
           children: [
-            for (int i = 0; i < 10; i++)
-              const Label("Method 1: Loop in Array", bold: true),
+            const Label("Method 1: Loop in Array", bold: true),
+            for (var item in colors)
+              Label(item),
+            	
+
 
             // TODO
-            const Label("\n\nMethod 2: Loop in Array", bold: false),
-            ...colors.map((toELement) => Label("Method 2: $toELement", bold: false)),
+            const Label("Method 2: Loop in Array", bold: true),
+            ...colors.map((toELement) => Label(toELement, bold: false)),
 
             // TODO
-            Label("\n\nMethod 3: Dedicated Function", bold: true),
+            Label("Method 3: Dedicated Function", bold: true),
             // TODo
             ...loopLabel().map((toElement) => toElement)
           ],
@@ -32,7 +35,7 @@ class MyHomePage extends StatelessWidget {
 
 List<Label> loopLabel() {
   return colors
-      .map((toELement) => Label("Method 3: $toELement", bold: true))
+      .map((toELement) => Label(toELement, bold: false))
       .toList();
 }
 

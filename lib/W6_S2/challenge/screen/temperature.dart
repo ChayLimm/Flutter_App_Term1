@@ -13,6 +13,7 @@ class _TemperatureState extends State<Temperature> {
     color: Colors.white,
     borderRadius: BorderRadius.circular(12),
   );
+  
   bool next = false;
   double fahrenheitValue = 0;
 
