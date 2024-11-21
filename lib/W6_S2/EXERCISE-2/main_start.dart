@@ -7,14 +7,15 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ProfileApp();
+    return ProfileApp(profileData: chaylimProfile);
   }
 }
 
 const Color mainColor = Color.fromARGB(255, 250, 91, 99);
 
 class ProfileApp extends StatelessWidget {
-  const ProfileApp({super.key});
+  final ProfileData profileData;
+  const ProfileApp({super.key,required this.profileData});
 
   @override
   Widget build(BuildContext context) {

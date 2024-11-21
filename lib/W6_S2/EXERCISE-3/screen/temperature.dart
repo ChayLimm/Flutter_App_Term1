@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttermain/W6_S2/EXERCISE-3/screen/welcome.dart';
 
 class Temperature extends StatefulWidget {
   const Temperature({super.key});
@@ -32,7 +31,7 @@ class _TemperatureState extends State<Temperature> {
       });
     }
 
-    return next?
+    return 
     Padding(
       padding: const EdgeInsets.all(40.0),
       child: Center(
@@ -66,8 +65,7 @@ class _TemperatureState extends State<Temperature> {
               child: const Text('test'))
         ],
       )),
-    )
-    : Welcome(trigger: switchPage);
+    );
   
   }
 }

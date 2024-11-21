@@ -12,13 +12,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int? favoriteIndex;
 
   void toggle(int index) {
     setState(() {
-      for (var item in jokeList) {
-        item.isFavorite = false;
-      }
-      jokeList[index].isFavorite = true;
+      if (index == favoriteIndex) favoriteIndex = null;
+      else favoriteIndex = index;
     });
   }
 
@@ -32,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
             FavoriteCard(
                 title: jokeList[i].title,
                 discription: jokeList[i].discription,
-                isFavorite: jokeList[i].isFavorite,
+                isFavorite:  i == favoriteIndex,
                 trigger: () => toggle(i))
         ],
       ),

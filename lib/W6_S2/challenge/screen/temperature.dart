@@ -33,8 +33,7 @@ class _TemperatureState extends State<Temperature> {
       });
     }
 
-    void convertToFahrenheit(double value) {
-      
+    void convertToFahrenheit(double value) {      
       setState(() {
         fahrenheitValue = (value * (9 / 5)) + 32;
       });

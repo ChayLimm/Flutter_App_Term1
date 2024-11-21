@@ -15,8 +15,8 @@ class Answer {
 }
 
 class Submission {
-  List<Answer> answerList;
-  Submission(this.answerList);
+  List<Answer> answerList = [];
+  Submission();
 
   int getScore(){
     int totalScore = 0;
@@ -46,7 +46,6 @@ class Submission {
     answerList.clear();
   }
 
-  @override
  
 
 }

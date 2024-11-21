@@ -17,11 +17,12 @@ import 'package:flutter/material.dart';
 // import 'package:fluttermain/W4_S1/EX2/main.dart';
 // import 'package:fluttermain/W4_S1/challenge/main.dart';
 // import 'package:fluttermain/lessonOfThwDay/layout.dart/activity1.dart';
-import 'package:fluttermain/W6_S2/EXERCISE-1/ex_1_start.dart';
+// import 'package:fluttermain/W6_S2/EXERCISE-1/ex_1_start.dart';
 // import 'package:fluttermain/W6_S2/EXERCISE-2/main_start.dart';
 // import 'package:fluttermain/W6_S2/EXERCISE-3/main.dart';
 // import 'package:fluttermain/W6_S2/EXERCISE-4/main.dart';
 // import 'package:fluttermain/W6_S2/challenge/main.dart';
+import 'package:fluttermain/W7_S1/lib/main.dart';
 
 
 void main() {
