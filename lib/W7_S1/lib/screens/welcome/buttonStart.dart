@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:fluttermain/W7_S1/lib/quiz_app.dart';
 
 class Buttonstart extends StatelessWidget {
-  final VoidCallback trigger;
+  final Function(Pages) trigger;
   const Buttonstart({super.key, required this.trigger});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: trigger,
+      onTap:()=> trigger(Pages.started),
       child: Container(
           decoration: BoxDecoration(
             border: Border.all(width: 1),

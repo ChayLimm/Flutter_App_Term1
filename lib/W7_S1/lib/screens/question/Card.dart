@@ -10,12 +10,18 @@ class QuestionCard extends StatelessWidget {
     return  SizedBox(
       height:200 ,
       child: Card(
+
         color: Colors.white,        
         child: Center(
-          child: Text(question.title,style: const TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 18
-          ),),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(question.title,style: const TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 18
+            ),
+                          textAlign: TextAlign.center,  
+            ),
+          ),
         ),
       ),
     );

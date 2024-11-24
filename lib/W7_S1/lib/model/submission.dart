@@ -37,8 +37,7 @@ class Submission {
     return null;
   }
   
-  void addAnswer(Question question, String answerInput) {
-    Answer answer = Answer(question: question, questionsAnswer: answerInput);
+  void addAnswer(Answer answer) {
     answerList.add(answer);
   }
  

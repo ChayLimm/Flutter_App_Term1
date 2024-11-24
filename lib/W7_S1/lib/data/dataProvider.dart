@@ -2,39 +2,39 @@ import "package:fluttermain/W7_S1/lib/model/quiz.dart";
 
 
 Quiz game1 = Quiz(
-  title: "Game 1",
+  title: "Flutter Quiz",
   questions: questionList,
 );
 
 List<Question> questionList = [
-  Question(
-    title: "Who is the best teacher?",
-    possibleAnswers: ["Ronan", "Hongly", "Mengly"],
-    goodAnswer: "Ronan",
+  const Question(
+    title: "What is Flutter?",
+    possibleAnswers: ["A programming language", "A UI framework", "A database engine"],
+    goodAnswer: "A UI framework",
   ),
-  Question(
-    title: "What is the capital city of Cambodia?",
-    possibleAnswers: ["Siem Reap", "Phnom Penh", "Battambang"],
-    goodAnswer: "Phnom Penh",
+  const Question(
+    title: "Which programming language is used in Flutter?",
+    possibleAnswers: ["Java", "C++", "Dart"],
+    goodAnswer: "Dart",
   ),
-  Question(
-    title: "What is 2 + 2?",
-    possibleAnswers: ["3", "4", "5"],
-    goodAnswer: "4",
+  const Question(
+    title: "Which widget is used for a simple button in Flutter?",
+    possibleAnswers: ["TextButton", "RaisedButton", "FlatButton"],
+    goodAnswer: "TextButton",
   ),
-  Question(
-    title: "Which planet is known as the Red Planet?",
-    possibleAnswers: ["Earth", "Mars", "Venus"],
-    goodAnswer: "Mars",
+  const Question(
+    title: "Which command is used to create a new Flutter project?",
+    possibleAnswers: ["flutter create", "flutter new", "flutter start"],
+    goodAnswer: "flutter create",
   ),
-  Question(
-    title: "What is the chemical symbol for water?",
-    possibleAnswers: ["O2", "H2O", "CO2"],
-    goodAnswer: "H2O",
+  const Question(
+    title: "What does 'StatelessWidget' mean in Flutter?",
+    possibleAnswers: ["Widget with mutable state", "Widget without mutable state", "A widget that animates"],
+    goodAnswer: "Widget without mutable state",
   ),
-  Question(
-    title: "Who wrote 'Romeo and Juliet'?",
-    possibleAnswers: ["Charles Dickens", "William Shakespeare", "Mark Twain"],
-    goodAnswer: "William Shakespeare",
+  const Question(
+    title: "Which widget is used to display an image in Flutter?",
+    possibleAnswers: ["Image", "Icon", "Picture"],
+    goodAnswer: "Image",
   ),
 ];

@@ -12,9 +12,5 @@ class Question {
   final String goodAnswer;
 
   const Question({required this.title, required this.possibleAnswers, required this.goodAnswer});
-
-  String getGoodAnswer() {
-    return goodAnswer;
-  }
-
+  
 }

@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermain/W7_S1/lib/model/quiz.dart';
 import 'package:fluttermain/W7_S1/lib/screens/welcome/buttonStart.dart';
-import 'package:fluttermain/W7_S1/lib/screens/question/question_screen.dart';
+import 'package:fluttermain/W7_S1/lib/quiz_app.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  final Quiz quiz;
-  const WelcomeScreen({super.key, required this.quiz});
+  final Function(Pages) onStart; 
+  final String title;
+  const WelcomeScreen({super.key, required this.title, required this.onStart});
 
-  void toQuiz(BuildContext context){
-    Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => QuestionScreen(questionList: quiz.questions)),
-    );
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue[200],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
+            SizedBox(
+              height: 200,
+              child: Image.asset('assets/images/quiz-logo.png',fit: BoxFit.cover,)),
+            const SizedBox(height: 32,),
             Text(
-              quiz.title,
+              title,
               style: const TextStyle(
-                color: Colors.black,
+                
+                color: Colors.white,
                 fontFamily: 'Roboto',
                 fontSize: 32,
                 fontWeight: FontWeight.w500,
               ),
             ),
             
-            Buttonstart(trigger:()=>  toQuiz(context)),
+            Buttonstart(trigger:  onStart),
         
           ],
         ),

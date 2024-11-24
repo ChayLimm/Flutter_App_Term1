@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:fluttermain/W7_S1/lib/screens/welcome/main.dart';
 import 'package:fluttermain/W7_S1/lib/data/dataProvider.dart';
-
+import 'package:fluttermain/W7_S1/lib/quiz_app.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return WelcomeScreen(quiz: game1,);
+    return QuizApp(quiz: game1,);
   }
 }
 
