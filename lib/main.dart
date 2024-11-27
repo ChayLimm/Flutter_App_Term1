@@ -22,12 +22,20 @@ import 'package:flutter/material.dart';
 // import 'package:fluttermain/W6_S2/EXERCISE-3/main.dart';
 // import 'package:fluttermain/W6_S2/EXERCISE-4/main.dart';
 // import 'package:fluttermain/W6_S2/challenge/main.dart';
-import 'package:fluttermain/W7_S1/lib/main.dart';
+// import 'package:fluttermain/W7_S1/lib/main.dart';
+import 'package:fluttermain/W8_S1/main.dart';
+import 'package:intl/date_symbol_data_local.dart'; // Import for intl localization
+void main() async {
+  // Ensure Flutter bindings are initialized
+  WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize date formatting for a specific locale (e.g., 'ar' for Arabic)
+  await initializeDateFormatting('ar', null); // Pass the correct locale ('ar' in this case)
 
-void main() {
+  // Start the app
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
