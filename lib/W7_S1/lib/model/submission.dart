@@ -16,7 +16,6 @@ class Answer {
 
 class Submission {
   List<Answer> answerList = [];
-  Submission();
 
   int getScore(){
     int totalScore = 0;
