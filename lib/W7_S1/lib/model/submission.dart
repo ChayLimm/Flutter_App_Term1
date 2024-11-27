@@ -36,8 +36,12 @@ class Submission {
     return null;
   }
   
-  void addAnswer(Answer answer) {
-    answerList.add(answer);
+  void addAnswer(Question question, String answer) {
+     Answer asAnswer = Answer(
+        question: question,
+        questionsAnswer: answer,
+      );
+    answerList.add(asAnswer);
   }
  
   void removeAnswer() {

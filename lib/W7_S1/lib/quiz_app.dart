@@ -30,11 +30,7 @@ class _QuizAppState extends State<QuizApp> {
   int currentIndex = 0;
 
   void submitAnswer(String answer) {
-      Answer asAnswer = Answer(
-        question: widget.quiz.questions[currentIndex],
-        questionsAnswer: answer,
-      );
-      submit.addAnswer(asAnswer);
+      submit.addAnswer(widget.quiz.questions[currentIndex], answer);
          setState(() {
       if (currentIndex < widget.quiz.questions.length - 1) {
         currentIndex++;
