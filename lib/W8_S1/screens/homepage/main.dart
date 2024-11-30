@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermain/W8_S1/models/expense.dart';
-import '../screens/card.dart';
-import '../widgets/addButton.dart';
+import 'expenseCard.dart';
+import '../../widgets/addButton.dart';
 
 
-class ExpenseApp extends StatefulWidget {
+class ExpenseApp extends StatelessWidget {
   final List<Expense> expenseList;
-  const ExpenseApp({super.key, required, required this.expenseList});
+  final VoidCallback trigger;
+  const ExpenseApp({super.key, required, required this.expenseList, required this.trigger});
 
-  @override
-  State<ExpenseApp> createState() => _ExpenseAppState();
-}
-
-class _ExpenseAppState extends State<ExpenseApp> {
-
-  void addCard(){
-
-  }
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,13 +19,13 @@ class _ExpenseAppState extends State<ExpenseApp> {
         ),
         backgroundColor: Colors.black,
         actions: [
-          AddButton(trigger: addCard)
+          AddButton(trigger: trigger)
         ],
       ),
       body: ListView.builder(
-          itemCount: widget.expenseList.length,
+          itemCount: expenseList.length,
           itemBuilder: (context, index) =>
-              ExpenseCard(expense: widget.expenseList[index])),
+              ExpenseCard(expense: expenseList[index])),
     );
   }
 }
