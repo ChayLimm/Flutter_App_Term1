@@ -19,7 +19,7 @@ class _DropDownMenuState extends State<DropDownMenu> {
       items: Category.values.map((Category value) {
             return DropdownMenuItem<Category>(
               value: value,
-              child: Text(value.toString().split('.').last),  // Extract the string part
+              child: Text(value.name),  // Extract the string part
             );
           }).toList(),
       onChanged:(Category? newValue){
