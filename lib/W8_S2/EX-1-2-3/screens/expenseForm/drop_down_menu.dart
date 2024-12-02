@@ -16,7 +16,7 @@ class _DropDownMenuState extends State<DropDownMenu> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<Category>(
-      items: Category.values.map<DropdownMenuItem<Category>>((Category value) {
+      items: Category.values.map((Category value) {
             return DropdownMenuItem<Category>(
               value: value,
               child: Text(value.toString().split('.').last),  // Extract the string part
