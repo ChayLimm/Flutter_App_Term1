@@ -11,20 +11,18 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Container(
-        height: double.infinity,
+        body:  Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 200),
         color: const Color(0xFFBBBBBB),
         child: const Column(
           children: [
             CustomeCard(title: "OOP", color: Colors.red,gradient: Colors.orange,),
-            CustomeCard(title: "Dart",gradient: Colors.purple,),
+            CustomeCard(title: "Dart",color: Colors.blue, gradient: Colors.purple,),
             CustomeCard(title: "Flutter", color: Colors.green, gradient: Colors.yellow),
           ],
         ),
       ),
-    ));
+    );
   }
 }

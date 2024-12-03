@@ -5,15 +5,15 @@ class CustomeCard extends StatelessWidget {
   final Color color;
   final Color gradient;
   const CustomeCard({super.key, 
-  required this.title, 
+  this.title = "Hello", 
   required this.gradient,
-  this.color = Colors.blue, 
+  required this.color , 
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Container(
+    return Container(
+        margin: const EdgeInsetsDirectional.all(5),
         width: 400,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -29,7 +29,7 @@ class CustomeCard extends StatelessWidget {
             fontWeight: FontWeight.w500
           ),),
         ),
-      ),
+    
     );
   }
 }
