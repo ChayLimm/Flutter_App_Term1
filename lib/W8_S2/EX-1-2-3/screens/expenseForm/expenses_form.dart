@@ -46,11 +46,22 @@ class _ExpenseFormState extends State<ExpenseForm> {
   }
 
   void onAdd() {
+ 
+    if(_titleController.text.isEmpty){
+      showAlert("Missing value","Title must be fill");
+            return;
+
+    }else if(_valueController.text.isEmpty){
+      showAlert("Missing value","Amount must be fill");
+      return;
+    }   
+  
+
     // 1- Get the values from inputs
     String title = _titleController.text;
     double amount = double.parse(_valueController.text);
 
-    
+  
 
     // 2- Create the expense
     Expense expense = Expense(
@@ -75,6 +86,43 @@ class _ExpenseFormState extends State<ExpenseForm> {
     );
   }
 
+  Future<void> showAlert(String title,String content)async {
+     showDialog(context: context, builder: (BuildContext context){
+      return AlertDialog(
+        title: Text(title,style: const TextStyle(
+          color: Colors.red
+        ),),
+        content: Text(content),
+        actions: [
+          TextButton(
+            onPressed:onCancel, 
+            child: const Text("Ok"))
+        ],
+      );
+     });
+  }
+//  DropdownButton<Category> dropDown(Function(Category) trigger) {
+//   Category dropDownValue = Category.food; // Initial value
+//   return DropdownButton<Category>(
+//     value: dropDownValue,
+//     items: Category.values.map((Category value) {
+//       return DropdownMenuItem<Category>(
+//         value: value,
+//         child: Text(value.name), // Display the category name
+//       );
+//     }).toList(),
+//     onChanged: (Category? newValue) {
+//       if (newValue != null) {
+//         dropDownValue = newValue; // Update the selected value
+//         trigger(newValue); // Call the trigger function with the selected value
+//       }
+//     },
+//   );
+// }
+
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -88,6 +136,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
             decoration: const InputDecoration(
               label: Text('Title'),
             ),
+          
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -128,4 +177,6 @@ class _ExpenseFormState extends State<ExpenseForm> {
       ),
     );
   }
+
+  
 }
