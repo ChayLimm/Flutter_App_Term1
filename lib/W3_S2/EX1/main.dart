@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
           child: Text(
         "Hello my name is Chaylim !",
         style: TextStyle(fontSize: 18, color: Colors.orange),
