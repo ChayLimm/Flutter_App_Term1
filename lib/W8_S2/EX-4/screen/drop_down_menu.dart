@@ -19,7 +19,7 @@ class _DropDownMenuState extends State<DropDownMenu> {
        items: Currency.values.map<DropdownMenuItem<Currency>>((Currency value) {
             return DropdownMenuItem<Currency>(
               value: value,
-              child: Text(value.toString().split('.').last),  // Extract the string part
+              child: Text(value.name), 
             );
           }).toList(),
       onChanged: (Currency? newValue) {

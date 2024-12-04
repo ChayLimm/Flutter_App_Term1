@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 // import 'package:fluttermain/lessonOfThwDay/discountCard.dart';
 // import 'package:fluttermain/W4_S3/EX1/main.dart';
 // import 'package:fluttermain/W4_S3/EX2/main.dart';
-import 'package:fluttermain/W4_S3/EX3/main.dart';
+// import 'package:fluttermain/W4_S3/EX3/main.dart';
 // import 'package:fluttermain/W3_S2/EX3/main.dart';
 // import 'package:fluttermain/W4_S3/challenge/main.dart';
 // import 'package:fluttermain/W4_S1/EX1/main.dart';
@@ -24,7 +24,7 @@ import 'package:fluttermain/W4_S3/EX3/main.dart';
 // import 'package:fluttermain/W6_S2/challenge/main.dart';
 // import 'package:fluttermain/W7_S1/lib/main.dart';
 // import 'package:fluttermain/W8_S1/main.dart';
-// import 'package:fluttermain/W8_S2/EX-1-2-3/main.dart';
+import 'package:fluttermain/W8_S2/EX-1-2-3/main.dart';
 // import 'package:fluttermain/W8_S2/EX-4/main.dart';
 import 'package:intl/date_symbol_data_local.dart'; // Import for intl localization
 void main() async {
