@@ -10,9 +10,9 @@ class FavoriteCard extends StatefulWidget {
   State<FavoriteCard> createState() => _FavoriteCardState();
 }
 
-
 class _FavoriteCardState extends State<FavoriteCard> {
   bool trigger = false;
+  Color get buttoncolor => trigger ? Colors.red : Colors.grey;
 
   void _triggerFav() {
     setState(() {
@@ -22,13 +22,40 @@ class _FavoriteCardState extends State<FavoriteCard> {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title:  Text(widget.title),
-      subtitle: Text(widget.description),
-      trailing: IconButton(
-        onPressed: _triggerFav,
-        icon: Icon(Icons.favorite),
-        color: trigger ? Colors.red : null,
+    return Container(
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.grey,
+            width: 1,
+          ),
+        ),
+      ),
+      margin: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.title,
+                style:
+                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+              ),
+              Text(
+                widget.description,
+                style: const TextStyle(
+                  fontSize: 12,
+                ),
+              )
+            ],
+          ),
+          IconButton(
+              onPressed: _triggerFav,
+              icon: Icon(Icons.favorite, color: buttoncolor))
+        ],
       ),
     );
   }

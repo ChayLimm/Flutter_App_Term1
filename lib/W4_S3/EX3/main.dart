@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Image Slider"),
+        title: const Text("Image Slider"),
         actions: [ButtonPrevious(trigger: previousImage,),ButtonNext(trigger: nextImage,),],
 
       ),

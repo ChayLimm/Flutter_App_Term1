@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:fluttermain/W3_S2/EX1/main.dart';
 // import 'package:fluttermain/W3_S2/EX2/main.dart';
-import 'package:fluttermain/W3_S2/EX3+EX4/main.dart';
+// import 'package:fluttermain/W3_S2/EX3+EX4/main.dart';
 // import 'package:fluttermain/W4_S1/EX1/main.dart';
 // import 'package:fluttermain/W4_S1/EX2/main.dart';
 // import 'package:fluttermain/W4_S1/EX3/main.dart';
@@ -10,7 +10,7 @@ import 'package:fluttermain/W3_S2/EX3+EX4/main.dart';
 // import 'package:fluttermain/lessonOfThwDay/discountCard.dart';
 // import 'package:fluttermain/W4_S3/EX1/main.dart';
 // import 'package:fluttermain/W4_S3/EX2/main.dart';
-// import 'package:fluttermain/W4_S3/EX3/main.dart';
+import 'package:fluttermain/W4_S3/EX3/main.dart';
 // import 'package:fluttermain/W3_S2/EX3/main.dart';
 // import 'package:fluttermain/W4_S3/challenge/main.dart';
 // import 'package:fluttermain/W4_S1/EX1/main.dart';
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  MyHomePage(title: "hello world"),
+      home:  MyHomePage(),
     );
   }
 }

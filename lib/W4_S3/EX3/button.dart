@@ -8,7 +8,7 @@ class ButtonNext extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: trigger, 
-      icon: Icon(Icons.arrow_right_outlined)
+      icon: const Icon(Icons.arrow_right_outlined)
       );
   }
 }
@@ -20,7 +20,7 @@ class ButtonPrevious extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: trigger, 
-      icon: Icon(Icons.arrow_left_outlined)
+      icon: const Icon(Icons.arrow_left_outlined)
       );
   }
 }
