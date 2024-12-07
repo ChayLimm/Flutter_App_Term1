@@ -26,6 +26,7 @@ class QuizApp extends StatefulWidget {
 
 class _QuizAppState extends State<QuizApp> {
   Pages quizState = Pages.notStarted;
+  
   Submission submit = Submission();
   int currentIndex = 0;
 

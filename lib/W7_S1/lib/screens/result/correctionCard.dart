@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttermain/W7_S1/lib/model/submission.dart';
 
 class CorrectCard extends StatelessWidget {
+  final int index;
   final Answer answer;
-  const CorrectCard({super.key, required this.answer});
+  const CorrectCard({super.key,required this.index, required this.answer});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,16 @@ class CorrectCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Question Title
-              Text(
+              Row(children: [
+                Text("$index.",style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Roboto',
+                  fontSize: 18
+                ),),
+                              const SizedBox(width: 10),
+
+                Text(
                 answer.question.title,
                 style: const TextStyle(
                   color: Colors.black,
@@ -33,6 +43,7 @@ class CorrectCard extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
+              ],),
               const SizedBox(height: 10),
       
               ...answer.question.possibleAnswers.map((option) {

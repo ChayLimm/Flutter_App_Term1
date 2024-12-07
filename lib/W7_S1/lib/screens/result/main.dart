@@ -39,7 +39,7 @@ class ResultScreen extends StatelessWidget {
               ),
 
               for(int i =0; i< submit.answerList.length ; i++)
-               CorrectCard(answer: submit.answerList[i],),
+               CorrectCard(index: i+1 ,answer: submit.answerList[i],),
               const SizedBox(height: 120,),
               Restartbutton(trigger:onRestart),
               const SizedBox(height: 120,),
