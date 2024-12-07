@@ -23,7 +23,7 @@ class _DeviceConverterState extends State<DeviceConverter> {
 
   TextEditingController _inputController =  TextEditingController();
   double displayValue = 0;
-  double selectedCurrency = Currency.euro.value;
+  Currency selectedCurrency = Currency.euro;
  
   final BoxDecoration textDecoration = BoxDecoration(
     color: Colors.white,
@@ -38,7 +38,7 @@ class _DeviceConverterState extends State<DeviceConverter> {
 
   void changeCurrency(Currency currency){
     setState(() {
-     selectedCurrency = currency.value;
+     selectedCurrency = currency;
     });
     updateResult();
   }
@@ -47,7 +47,7 @@ class _DeviceConverterState extends State<DeviceConverter> {
     setState(() {
     displayValue = _inputController.text.isEmpty
     ? 0
-    : double.parse(_inputController.text) * selectedCurrency;
+    : double.parse(_inputController.text) * selectedCurrency.value;
     });
   }
  
@@ -95,7 +95,7 @@ class _DeviceConverterState extends State<DeviceConverter> {
               style: const TextStyle(color: Colors.white)),
 
           const SizedBox(height: 30),
-          DropDownMenu(trigger:  changeCurrency),
+          DropDownMenu(selectedCurrency: selectedCurrency, trigger:  changeCurrency),
           const SizedBox(height: 30),
           const Text("Amount in selected device:"),
           const SizedBox(height: 10),

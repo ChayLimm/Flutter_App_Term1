@@ -38,7 +38,7 @@ class CorrectCard extends StatelessWidget {
               ...answer.question.possibleAnswers.map((option) {
       
                 bool isCorrectAnswer = option == answer.question.goodAnswer;
-                bool isSelectedAnswer = option == answer.questionsAnswer;
+                bool isSelectedAnswer = option == answer.answer;
                 
                 Color textColor = isCorrectAnswer
                     ? Colors.green

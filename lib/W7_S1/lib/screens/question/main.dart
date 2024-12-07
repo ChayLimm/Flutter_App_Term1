@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermain/W7_S1/lib/model/quiz.dart';
-import 'package:fluttermain/W7_S1/lib/screens/question/AnswerCard.dart';
-import 'package:fluttermain/W7_S1/lib/screens/question/Card.dart';
+import 'package:fluttermain/W7_S1/lib/screens/question/answerCards.dart';
+import 'package:fluttermain/W7_S1/lib/screens/question/questionCard.dart';
 
 class QuestionScreen extends StatelessWidget {
   final Question question;

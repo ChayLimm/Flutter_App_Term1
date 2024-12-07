@@ -1,12 +1,12 @@
 import 'package:fluttermain/W7_S1/lib/model/quiz.dart';
 
 class Answer {
-  final String questionsAnswer;
+  String answer; // answer can be update so i remove final
   final Question question;
-  Answer({required this.questionsAnswer,required this.question});
+  Answer({required this.answer,required this.question});
   
   bool isCorrect(){    
-    if( question.goodAnswer == questionsAnswer){
+    if( question.goodAnswer == answer){
       return true;
     }else {
       return false;
@@ -39,9 +39,18 @@ class Submission {
   void addAnswer(Question question, String answer) {
      Answer asAnswer = Answer(
         question: question,
-        questionsAnswer: answer,
+        answer: answer,
       );
-    answerList.add(asAnswer);
+    // check to update before adding a new one avoiding redondance data
+    for (var item in answerList) {
+    if (item.question == asAnswer.question) {
+      item.answer = asAnswer.answer; 
+      return; 
+    }
+  }
+
+   answerList.add(asAnswer);
+
   }
  
   void removeAnswer() {

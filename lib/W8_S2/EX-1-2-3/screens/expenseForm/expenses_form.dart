@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttermain/W8_S2/EX-1-2-3/screens/expenseForm/drop_down_menu.dart';
+import 'package:fluttermain/W8_S2/EX-1-2-3/screens/expenseForm/dropdownmenu.dart';
+import 'package:intl/intl.dart';
 import '../../models/expense.dart';
-import 'date_picker.dart';
 
 class ExpenseForm extends StatefulWidget {
   const ExpenseForm({super.key, required this.onCreated});
@@ -16,8 +16,9 @@ class ExpenseForm extends StatefulWidget {
 class _ExpenseFormState extends State<ExpenseForm> {
   final _titleController = TextEditingController();
   final _valueController = TextEditingController();
-  Category category = Category.food;
-  DateTime timeStamp = DateTime.now();
+
+  Category selectedCategory = Category.food;
+  DateTime selectedDate = DateTime.now();
 
   String get title => _titleController.text;
 
@@ -30,13 +31,13 @@ class _ExpenseFormState extends State<ExpenseForm> {
 
   void updateCategory(Category newCategory) {
     setState(() {
-      category = newCategory;
+      selectedCategory = newCategory;
     });
   }
 
   void updateTimeStamp(DateTime newTimeStamp) {
     setState(() {
-      timeStamp = newTimeStamp;
+      selectedDate = newTimeStamp;
     });
   }
 
@@ -46,26 +47,24 @@ class _ExpenseFormState extends State<ExpenseForm> {
   }
 
   void onAdd() {
- 
-    if(_titleController.text.isEmpty){
-      showAlert("Missing value","Title must be fill");
-            return;
-
-    }else if(_valueController.text.isEmpty){
-      showAlert("Missing value","Amount must be fill");
+    if (_titleController.text.isEmpty) {
+      showAlert("Missing value", "Title must be fill");
       return;
-    }   
-  
+    } else if (_valueController.text.isEmpty) {
+      showAlert("Missing value", "Amount must be fill");
+      return;
+    }
 
     // 1- Get the values from inputs
     String title = _titleController.text;
     double amount = double.parse(_valueController.text);
 
-  
-
     // 2- Create the expense
     Expense expense = Expense(
-        title: title, amount: amount, date: timeStamp, category: category);
+        title: title,
+        amount: amount,
+        date: selectedDate,
+        category: selectedCategory);
 
     // 3- Ask the parent to add the expense
     widget.onCreated(expense);
@@ -86,42 +85,34 @@ class _ExpenseFormState extends State<ExpenseForm> {
     );
   }
 
-  Future<void> showAlert(String title,String content)async {
-     showDialog(context: context, builder: (BuildContext context){
-      return AlertDialog(
-        title: Text(title,style: const TextStyle(
-          color: Colors.red
-        ),),
-        content: Text(content),
-        actions: [
-          TextButton(
-            onPressed:onCancel, 
-            child: const Text("Ok"))
-        ],
-      );
-     });
+  Future<void> selectDate() async {
+    DateTime? pickdate = await showDatePicker(
+      context: context,
+      firstDate: DateTime(DateTime.now().year - 1),
+      lastDate: DateTime(DateTime.now().year + 1),
+      initialDate: DateTime.now(),
+    );
+    if (pickdate != null) {
+      setState(() {
+        updateTimeStamp(pickdate);
+      });
+    }
   }
-//  DropdownButton<Category> dropDown(Function(Category) trigger) {
-//   Category dropDownValue = Category.food; // Initial value
-//   return DropdownButton<Category>(
-//     value: dropDownValue,
-//     items: Category.values.map((Category value) {
-//       return DropdownMenuItem<Category>(
-//         value: value,
-//         child: Text(value.name), // Display the category name
-//       );
-//     }).toList(),
-//     onChanged: (Category? newValue) {
-//       if (newValue != null) {
-//         dropDownValue = newValue; // Update the selected value
-//         trigger(newValue); // Call the trigger function with the selected value
-//       }
-//     },
-//   );
-// }
 
-
-  
+  Future<void> showAlert(String title, String content) async {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              title,
+              style: const TextStyle(color: Colors.red),
+            ),
+            content: Text(content),
+            actions: [TextButton(onPressed: onCancel, child: const Text("Ok"))],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +127,6 @@ class _ExpenseFormState extends State<ExpenseForm> {
             decoration: const InputDecoration(
               label: Text('Title'),
             ),
-          
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -157,12 +147,25 @@ class _ExpenseFormState extends State<ExpenseForm> {
                   ),
                 ),
               ),
-              DatePickerButton(
-                trigger: updateTimeStamp,
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.grey),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(DateFormat('dd-MM-yyyy').format(selectedDate)),
+                    IconButton(
+                        onPressed: selectDate,
+                        icon: const Icon(Icons.calendar_month))
+                  ],
+                ),
               )
             ],
           ),
-          DropDownMenu(trigger: updateCategory),
+          DropDownMenu(value: selectedCategory, trigger: updateCategory),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -177,6 +180,4 @@ class _ExpenseFormState extends State<ExpenseForm> {
       ),
     );
   }
-
-  
 }

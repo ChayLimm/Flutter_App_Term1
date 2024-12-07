@@ -14,8 +14,7 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
-
-  Expense? removedExpense ;
+  Expense? removedExpense;
   int? removedIndex;
 
   final List<Expense> _registeredExpenses = [
@@ -33,13 +32,13 @@ class _ExpensesState extends State<Expenses> {
     ),
   ];
 
-  void undoRemoved(){
+  void undoRemoved() {
     setState(() {
       _registeredExpenses.insert(removedIndex!, removedExpense!);
     });
   }
 
-  void onExpenseRemoved(Expense expense, int index) { 
+  void onExpenseRemoved(Expense expense, int index) {
     setState(() {
       removedExpense = expense;
       removedIndex = index;
@@ -64,37 +63,39 @@ class _ExpensesState extends State<Expenses> {
       _registeredExpenses.add(newExpense);
     });
   }
- 
 
   void onAddPressed() {
     showModalBottomSheet(
-  context: context,
-  isScrollControlled: true,
-  builder: (ctx) => FractionallySizedBox(
-    heightFactor: 0.7, 
-    child: ExpenseForm(onCreated: onExpenseCreated),
-  ),
-);
-
+      context: context,
+      isScrollControlled: true,
+      builder: (ctx) => FractionallySizedBox(
+        heightFactor: 0.7,
+        child: ExpenseForm(onCreated: onExpenseCreated),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100],
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: onAddPressed,
-          )
-        ],
-        backgroundColor: Colors.blue[700],
-        title: const Text('Ronan-The-Best Expenses App'),
-      ),
-      body: _registeredExpenses.isNotEmpty 
-      ? ExpensesList(expenses: _registeredExpenses, onExpenseRemoved: onExpenseRemoved,) 
-      : Empty(triggerAdd: onAddPressed,)
-    );
+        backgroundColor: Colors.blue[100],
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: onAddPressed,
+            )
+          ],
+          backgroundColor: Colors.blue[700],
+          title: const Text('Ronan-The-Best Expenses App'),
+        ),
+        body: _registeredExpenses.isNotEmpty
+            ? ExpensesList(
+                expenses: _registeredExpenses,
+                onExpenseRemoved: onExpenseRemoved,
+              )
+            : Empty(
+                triggerAdd: onAddPressed,
+              ));
   }
 }

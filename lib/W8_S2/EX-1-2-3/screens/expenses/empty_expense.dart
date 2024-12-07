@@ -6,20 +6,21 @@ class Empty extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-            child: Column(
+    return Center(
+        child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
           "The expense list is empty try add something",
         ),
-        const SizedBox(height: 44,),
+        const SizedBox(
+          height: 44,
+        ),
         ElevatedButton(
           onPressed: triggerAdd,
           child: const Text("Add Expense"),
         )
       ],
-    )));
+    ));
   }
 }

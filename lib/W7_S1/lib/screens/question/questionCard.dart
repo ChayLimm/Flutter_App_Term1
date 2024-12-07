@@ -19,7 +19,7 @@ class QuestionCard extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontSize: 18
             ),
-                          textAlign: TextAlign.center,  
+              textAlign: TextAlign.center,  
             ),
           ),
         ),

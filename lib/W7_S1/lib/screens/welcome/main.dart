@@ -8,8 +8,6 @@ class WelcomeScreen extends StatelessWidget {
   final String title;
   const WelcomeScreen({super.key, required this.title, required this.onStart});
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
